@@ -28,6 +28,10 @@ const AddApp = function () {
           },
         }
       );
+
+        name.current.value = "";
+        points_earned.current.value = "";
+        image.current.value = "";
       console.log(response);
       console.log(response.status);
 
@@ -40,9 +44,7 @@ const AddApp = function () {
         alert("Bad Request!!");
       
     }
-    name.current.value=''
-    points_earned.current.value=''
-    image.current.value=''
+  
   }
   return (
     <>
