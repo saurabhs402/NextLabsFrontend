@@ -32,7 +32,7 @@ const UserApps=function(){
 
     console.log(data)
     axios
-      .patch("http://localhost:8000/api/user/update/", data, {
+      .patch("saurabhss402.pythonanywhere.com/api/user/update/", data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
           "Content-Type": "application/json", // Specify JSON content type
@@ -62,12 +62,12 @@ const UserApps=function(){
 
      try {
        const response = await axios.post(
-         "http://127.0.0.1:8000/api/upload/",
+         "saurabhss402.pythonanywhere.com/api/upload/",
          formData,
          {
            headers: {
              Authorization: `Bearer ${localStorage.getItem("token")}`,
-             "Content-Type": "multipart/form-data"
+             "Content-Type": "multipart/form-data",
            },
          }
        );
@@ -104,17 +104,19 @@ const UserApps=function(){
 
         // Make a GET request to the backend API endpoint
         axios
-          .get("http://127.0.0.1:8000/api/user/profile/", config)
+          .get("saurabhss402.pythonanywhere.com/api/user/profile/", config)
           .then((response) => {
             // Update state with the fetched apps
             console.log(response.data);
             console.log(response.data);
             setName(response.data.username);
-            setPointsEarned(response.data.points_earned)
-            setTasksCompleted(response.data.tasks_completed)
+            setPointsEarned(response.data.points_earned);
+            setTasksCompleted(response.data.tasks_completed);
           })
-          .catch(function(error){ navigate('/userLogin') 
-          console.error("Error fetching apps:", error)});
+          .catch(function (error) {
+            navigate("/userLogin");
+            console.error("Error fetching apps:", error);
+          });
 
         // Handle the response data (user profile data)
 
@@ -128,15 +130,17 @@ const UserApps=function(){
 
 
     // Fetch apps from Django API using axios
-    axios.get("http://127.0.0.1:8000/api/get_apps/") // Replace '/api/get_apps/' with your actual API endpoint
+    axios
+      .get("saurabhss402.pythonanywhere.com/api/get_apps/") // Replace '/api/get_apps/' with your actual API endpoint
       .then((response) => {
         // Update state with the fetched apps
-        console.log(response.data)
+        console.log(response.data);
         setApps(response.data);
       })
-      .catch(function(error){  
-       navigate('/userLogin')
-       console.error("Error fetching apps:", error)});
+      .catch(function (error) {
+        navigate("/userLogin");
+        console.error("Error fetching apps:", error);
+      });
 
   }, []); // Empty dependency array ensures the effect runs only once after the component mounts
 

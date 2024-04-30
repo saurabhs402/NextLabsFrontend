@@ -14,12 +14,15 @@ const Signup = function () {
     console.log(password.current.value);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/register/", {
-        email: email.current.value,
-        username:username.current.value,
-        password: password.current.value,
-        password2:password2.current.value
-      });
+      const response = await axios.post(
+        "saurabhss402.pythonanywhere.com/api/register/",
+        {
+          email: email.current.value,
+          username: username.current.value,
+          password: password.current.value,
+          password2: password2.current.value,
+        }
+      );
       console.log(response);
       console.log(response.status);
       console.log(typeof response.status);

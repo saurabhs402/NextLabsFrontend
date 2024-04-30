@@ -13,10 +13,13 @@ const Login = function () {
      console.log(password.current.value);
      
      try {
-       const response = await axios.post("http://127.0.0.1:8000/api/token/", {
-         email: email.current.value,
-         password: password.current.value,
-       });
+       const response = await axios.post(
+         "saurabhss402.pythonanywhere.com/api/token/",
+         {
+           email: email.current.value,
+           password: password.current.value,
+         }
+       );
        console.log(response);
        console.log(response.status)
        console.log(typeof(response.status));
@@ -41,13 +44,14 @@ const Login = function () {
 
   useEffect(function(){
 
-      axios.get("http://localhost:8000/api/auth/", {
+      axios
+        .get("saurabhss402.pythonanywhere.com/api/auth/", {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}` // Send JWT token in the Authorization header
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
           },
         })
         .then((response) => {
-          navigate('/userApps')
+          navigate("/userApps");
           console.log("User profile updated successfully:", response.data);
         })
         .catch((error) => {

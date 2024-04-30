@@ -20,7 +20,7 @@ const AddApp = function () {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/create_app/",
+        "saurabhss402.pythonanywhere.com/api/create_app/",
         formData,
         {
           headers: {

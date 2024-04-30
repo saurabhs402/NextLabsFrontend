@@ -12,7 +12,8 @@ const AdminLogin = function () {
     console.log(password.current.value);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/check-admin/",
+      const response = await axios.post(
+        "saurabhss402.pythonanywhere.com/api/check-admin/",
         {
           email: email.current.value,
           password: password.current.value,
