@@ -86,7 +86,7 @@ const Login = function () {
               className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
               type="submit"
             >
-              Login
+             User Login
             </button>
           </form>
           <div className="text-sm text-white text-center mt-[1.6rem]">Don’t have an account yet? <a className="text-sm text-blue-500" href="/signup">Sign up for free!</a></div>

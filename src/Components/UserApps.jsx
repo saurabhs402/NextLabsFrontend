@@ -80,10 +80,6 @@ const UserApps=function(){
       setVisible(false)
    };
    
-    
-  
-
-  
 
 
   useEffect(() => {
