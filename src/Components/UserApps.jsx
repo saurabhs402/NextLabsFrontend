@@ -32,7 +32,7 @@ const UserApps=function(){
 
     console.log(data)
     axios
-      .patch("saurabhss402.pythonanywhere.com/api/user/update/", data, {
+      .patch("http://saurabhss402.pythonanywhere.com/api/user/update/", data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
           "Content-Type": "application/json", // Specify JSON content type
@@ -62,7 +62,7 @@ const UserApps=function(){
 
      try {
        const response = await axios.post(
-         "saurabhss402.pythonanywhere.com/api/upload/",
+         "http://saurabhss402.pythonanywhere.com/api/upload/",
          formData,
          {
            headers: {
@@ -104,7 +104,10 @@ const UserApps=function(){
 
         // Make a GET request to the backend API endpoint
         axios
-          .get("saurabhss402.pythonanywhere.com/api/user/profile/", config)
+          .get(
+            "http://saurabhss402.pythonanywhere.com/api/user/profile/",
+            config
+          )
           .then((response) => {
             // Update state with the fetched apps
             console.log(response.data);
@@ -114,7 +117,7 @@ const UserApps=function(){
             setTasksCompleted(response.data.tasks_completed);
           })
           .catch(function (error) {
-            navigate("/userLogin");
+            // navigate('/userLogin')
             console.error("Error fetching apps:", error);
           });
 
@@ -123,7 +126,7 @@ const UserApps=function(){
         // Process the user profile data as needed
       } catch (error) {
         // Handle errors
-        navigate("/userLogin");
+        // navigate("/userLogin");
         console.error("Error fetching user profile:", error);
       }
 
@@ -131,20 +134,37 @@ const UserApps=function(){
 
     // Fetch apps from Django API using axios
     axios
-      .get("saurabhss402.pythonanywhere.com/api/get_apps/") // Replace '/api/get_apps/' with your actual API endpoint
+      .get("http://saurabhss402.pythonanywhere.com/api/get_apps/") // Replace '/api/get_apps/' with your actual API endpoint
       .then((response) => {
         // Update state with the fetched apps
         console.log(response.data);
         setApps(response.data);
       })
       .catch(function (error) {
-        navigate("/userLogin");
+        //  navigate('/userLogin')
         console.error("Error fetching apps:", error);
       });
 
   }, []); // Empty dependency array ensures the effect runs only once after the component mounts
 
 
+  //Auth use effect
+  useEffect(function () {
+    axios
+      .get("http://saurabhss402.pythonanywhere.com/api/auth/", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
+        },
+      })
+      .then((response) => {
+        
+        console.log("User profile updated successfully:", response.data);
+      })
+      .catch((error) => {
+        navigate("/userLogin");
+        console.error("Error updating user profile:", error);
+      });
+  },[points_earned]);
    
   return (
     <>

@@ -15,7 +15,7 @@ const Signup = function () {
 
     try {
       const response = await axios.post(
-        "saurabhss402.pythonanywhere.com/api/register/",
+        "http://saurabhss402.pythonanywhere.com/api/register/",
         {
           email: email.current.value,
           username: username.current.value,
