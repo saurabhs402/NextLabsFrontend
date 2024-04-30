@@ -67,7 +67,7 @@ const Login = function () {
     <>
       <div className="flex flex-col items-center bg-gradient-to-r from-gray-900 to-gray-800 justify-center h-screen dark">
         <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-200 mb-4">Login</h2>
+          <h2 className="text-2xl font-bold text-gray-200 mb-4">User Login</h2>
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <input
               ref={email}
@@ -88,7 +88,7 @@ const Login = function () {
               className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
               type="submit"
             >
-             User Login
+              Login
             </button>
           </form>
           <div className="text-sm text-white text-center mt-[1.6rem]">Don’t have an account yet? <a className="text-sm text-blue-500" href="/signup">Sign up for free!</a></div>
