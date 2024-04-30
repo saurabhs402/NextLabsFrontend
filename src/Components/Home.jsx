@@ -6,7 +6,7 @@ const Home = function () {
       <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-gray-900 to-gray-800 justify-center h-screen dark">
         <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-6xl lg:text-9xl">
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-            Better Data
+            Next Labs
           </span>
         </h1>
 
