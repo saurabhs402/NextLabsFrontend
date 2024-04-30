@@ -40,6 +40,9 @@ const AddApp = function () {
         alert("Bad Request!!");
       
     }
+    name.current.value=''
+    points_earned.current.value=''
+    image.current.value=''
   }
   return (
     <>
