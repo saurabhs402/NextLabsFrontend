@@ -26,6 +26,11 @@ const Signup = function () {
       console.log(response);
       console.log(response.status);
       console.log(typeof response.status);
+          email.current.value=''
+          username: username.current.value=''
+          password: password.current.value=''
+          password2: password2.current.value=''
+
       if (response.status === 201) {
         // Authentication successful, save token or session
         localStorage.setItem("token", response.data.access);
