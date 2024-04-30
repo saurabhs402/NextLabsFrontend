@@ -14,7 +14,7 @@ const Login = function () {
      
      try {
        const response = await axios.post(
-         "http://saurabhss402.pythonanywhere.com/api/token/",
+         "https://saurabhss402.pythonanywhere.com/api/token/",
          {
            email: email.current.value,
            password: password.current.value,
@@ -45,7 +45,7 @@ const Login = function () {
   useEffect(function(){
 
       axios
-        .get("http://saurabhss402.pythonanywhere.com/api/auth/", {
+        .get("https://saurabhss402.pythonanywhere.com/api/auth/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
           },

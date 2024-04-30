@@ -13,7 +13,7 @@ const AdminLogin = function () {
 
     try {
       const response = await axios.post(
-        "http://saurabhss402.pythonanywhere.com/api/check-admin/",
+        "https://saurabhss402.pythonanywhere.com/api/check-admin/",
         {
           email: email.current.value,
           password: password.current.value,

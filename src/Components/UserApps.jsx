@@ -32,7 +32,7 @@ const UserApps=function(){
 
     console.log(data)
     axios
-      .patch("http://saurabhss402.pythonanywhere.com/api/user/update/", data, {
+      .patch("https://saurabhss402.pythonanywhere.com/api/user/update/", data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
           "Content-Type": "application/json", // Specify JSON content type
@@ -62,7 +62,7 @@ const UserApps=function(){
 
      try {
        const response = await axios.post(
-         "http://saurabhss402.pythonanywhere.com/api/upload/",
+         "https://saurabhss402.pythonanywhere.com/api/upload/",
          formData,
          {
            headers: {
@@ -105,7 +105,7 @@ const UserApps=function(){
         // Make a GET request to the backend API endpoint
         axios
           .get(
-            "http://saurabhss402.pythonanywhere.com/api/user/profile/",
+            "https://saurabhss402.pythonanywhere.com/api/user/profile/",
             config
           )
           .then((response) => {
@@ -134,7 +134,7 @@ const UserApps=function(){
 
     // Fetch apps from Django API using axios
     axios
-      .get("http://saurabhss402.pythonanywhere.com/api/get_apps/") // Replace '/api/get_apps/' with your actual API endpoint
+      .get("https://saurabhss402.pythonanywhere.com/api/get_apps/") // Replace '/api/get_apps/' with your actual API endpoint
       .then((response) => {
         // Update state with the fetched apps
         console.log(response.data);
@@ -151,7 +151,7 @@ const UserApps=function(){
   //Auth use effect
   useEffect(function () {
     axios
-      .get("http://saurabhss402.pythonanywhere.com/api/auth/", {
+      .get("https://saurabhss402.pythonanywhere.com/api/auth/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Send JWT token in the Authorization header
         },
